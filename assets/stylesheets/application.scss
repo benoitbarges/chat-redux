@@ -4,4 +4,35 @@ body {
 .app {
   margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
+
+  .channel-container {
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .channel-list{
+    padding: 20px 5px;
+  }
+
+  .channel {
+    padding: 5px 5px;
+    color: #8F97A6;
+    list-style-type: none;
+    cursor: pointer;
+  }
+
+  .channel.selected {
+    color: black;
+  }
+
+  .message-container {
+    width: 60%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
 }
