@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchMessages } from "../actions/index";
 import { bindActionCreators } from 'redux';
+import { fetchMessages } from "../actions/index";
 import Message from '../components/message';
 
 class MessageList extends Component {
@@ -10,13 +10,17 @@ class MessageList extends Component {
     return this.props.fetchMessages(this.props.selectedChannel);
   }
 
+  componentDidUpdate() {
+    this.list.scrollTop = this.list.scrollHeight;
+  }
+
   render() {
     return (
-      <div className="message-container">
-        <div className="message-channel-name">
+      <div className="message-list-container">
+        <div className="message-list-channel">
           Channel #{this.props.selectedChannel}
         </div>
-        <div className="message-list">
+        <div className="message-list row" ref={(list) => { this.list = list; }}>
           {this.props.messages.map((message) => { return <Message message={message} key={message.created_at} />;})}
         </div>
       </div>

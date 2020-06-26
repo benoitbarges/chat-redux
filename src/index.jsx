@@ -9,7 +9,7 @@ import reduxPromise from 'redux-promise';
 import messagesReducer from './reducers/messages_reducer';
 import channelsReducer from './reducers/channels_reducer';
 import selectedChannelReducer from './reducers/selected_channel_reducer';
-// import currentUserReducer from './reducers/current_user_reducer';
+import currentUserReducer from './reducers/current_user_reducer';
 
 // internal modules
 import App from './components/app';
@@ -20,7 +20,7 @@ const reducers = combineReducers({
   messages: messagesReducer,
   channels: channelsReducer,
   selectedChannel: selectedChannelReducer,
-  // currentUser: currentUserReducer
+  currentUser: currentUserReducer
 });
 
 const initialState = {

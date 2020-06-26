@@ -1,7 +1,7 @@
-const currentUserReducer = (state, action) => {
-  if (state === undefined) {
-    // Reducer initialisation
-    return [];
+const currentUserReducer = (state = null, action) => {
+  switch (action.type) {
+    default:
+      return state;
   }
 };
 
